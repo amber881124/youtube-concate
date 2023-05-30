@@ -1,5 +1,5 @@
-youtube_concate/get_caption.py
-
+# /表示資料夾(可加可不加)
+dowonloads/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
