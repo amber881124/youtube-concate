@@ -1,6 +1,7 @@
 from .step import Step
 from .step import StepException
 
+
 class Search(Step):
     def process(self, data, inputs, utils):
         for caption_file in data: # 字典第一層的每個key就是字幕檔名
