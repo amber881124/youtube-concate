@@ -2,6 +2,7 @@ import os
 from pprint import pprint
 
 from .step import Step
+from .step import StepException
 from youtube_concate.settings import CAPTIONS_DIR
 
 
@@ -22,7 +23,7 @@ class ReadCaption(Step):
                     # print(time)
                     caption[text] = time
             data[caption_file] = caption
-        pprint(data)
+        # pprint(data)
         return data
 
 
