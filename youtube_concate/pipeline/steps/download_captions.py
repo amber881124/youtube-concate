@@ -10,17 +10,17 @@ class DownloadCaptions(Step):
     def process(self, data, inputs, utils):
         for yt in data:
             print(f'Downloading caption for {yt.id}')
-            if utils.caption_file_exists(yt.id):
+            if utils.caption_file_exists(yt):
                 print('found existing caption file')
             try:
                 srt = YouTubeTranscriptApi.get_transcript(yt.id, languages=['en'])
             except (TranscriptsDisabled, NoTranscriptFound) as e:
                 print(f'{repr(e).split("(")}[0] when downloading caption for{yt.id}')
                 continue
-            with open(utils.get_caption_filepath(yt.id), "w", encoding='utf-8') as f:
+            with open(yt.caption_filepath, "w", encoding='utf-8') as f:
                 # iterating through each element of list srt
                 for i in srt:
                     # writing each element of srt on a new line
                     f.write(f'{format(i)}\n')
-
+        return data
 

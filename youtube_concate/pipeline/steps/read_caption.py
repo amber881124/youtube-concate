@@ -1,9 +1,4 @@
-import os
-from pprint import pprint
-
 from .step import Step
-from .step import StepException
-from youtube_concate.settings import CAPTIONS_DIR
 
 
 # {'text': 'the brand new', 'start': 19.199, 'duration': 11.92}
@@ -13,8 +8,9 @@ class ReadCaption(Step):
             if not utils.caption_file_exists(yt):
                 print(f'影片id : {yt.id} 的字幕檔不存在')
                 continue
+
+            captions = {}
             with open(yt.get_caption_filepath(), 'r') as f:
-                captions = {}
                 for line in f:
                     caption, start, duration = line.split(', ')
                     caption = caption.split(': ')[-1]
@@ -27,10 +23,6 @@ class ReadCaption(Step):
                     captions[caption] = time
                 # 把此影片的字幕(字典)裝到yt物件的captions屬性
                 # 解決雙層字典問題
-                yt.captions = captions
-        # pprint(data)
+            yt.captions = captions
+        # 和接收的data一樣
         return data
-
-
-
-

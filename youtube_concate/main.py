@@ -22,8 +22,8 @@ def main():
         InitializeYT(),
         # DownloadCaptions(),
         ReadCaption(),
-        # Search(),
-        # Postflight(),
+        Search(),
+        Postflight(),
     ]
     utils = Utils()
     # pipeline design pattern
