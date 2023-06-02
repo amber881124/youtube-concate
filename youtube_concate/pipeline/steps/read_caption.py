@@ -6,7 +6,7 @@ class ReadCaption(Step):
     def process(self, data, inputs, utils):
         for yt in data:
             if not utils.caption_file_exists(yt):
-                print(f'影片id : {yt.id} 的字幕檔不存在')
+                # print(f'影片id : {yt.id} 的字幕檔不存在')
                 continue
 
             captions = {}

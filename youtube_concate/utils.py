@@ -31,4 +31,11 @@ class Utils:
         # 有可能檔案已建立，但內容是空的(例如:執行錯誤)
         return os.path.exists(filepath) and os.path.getsize(filepath) > 0
 
+    @staticmethod
+    def video_file_exists(yt):
+        filepath = yt.video_filepath
+        # 檔案是否存在，且不是空檔案
+        # 有可能檔案已建立，但內容是空的(例如:執行錯誤)
+        return os.path.exists(filepath) and os.path.getsize(filepath) > 0
+
 

@@ -1,6 +1,5 @@
 from .step import Step
-from .step import StepException
-from youtube_concate.pipeline.model.yt import YT
+from youtube_concate.model.yt import YT
 
 
 class InitializeYT(Step):
