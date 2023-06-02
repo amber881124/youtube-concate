@@ -1,6 +1,7 @@
 # /表示資料夾(可加可不加)
 # 擋掉static file
 dowonloads/
+outputs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

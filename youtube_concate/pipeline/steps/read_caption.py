@@ -16,7 +16,12 @@ class ReadCaption(Step):
                     caption = caption.split(': ')[-1]
                     caption = caption.replace("'", "").replace('"', '').strip()
                     # print(caption)
-                    time = [start.strip().split(': ')[-1], duration.strip().split(': ')[-1].replace("}", "").strip()]
+                    start = start.strip().split(': ')[-1]
+                    start = eval(start)
+                    duration = duration.strip().split(': ')[-1].replace("}", "").strip()
+                    duration = eval(duration)
+                    end = start + duration
+                    time = (start, end)
                     # print(time)
                     # 字典(captions):key是caption，value是time
                     # key是caption:因為之後要找關鍵字可以直接用for loop取得caption
